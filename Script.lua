@@ -35,7 +35,6 @@ local Text = Draw("Text", {
     Outline = true,
     OutlineColor = Color3.fromRGB(255, 255, 255),
     Color = Color3.fromRGB(0, 0, 0),
-    Font = Enum.Font.Cartoon
     Text = "Auto Clicking : FALSE",
     Visible = true,
 })
