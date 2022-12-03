@@ -1,5 +1,3 @@
-Use Synapse to Use
-
 https://x.synapse.to/
 
 Instant Settings: Paste it Above Hotkey V
