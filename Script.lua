@@ -35,9 +35,7 @@ local Text = Draw("Text", {
     Outline = true,
     OutlineColor = Color3.fromRGB(255, 255, 255),
     Color = Color3.fromRGB(0, 0, 0),
-    Text = "Auto Clicking : FALSE",
-    BorderColor3 = Color3.new(1, 0, 0)
-    Font = Enum.Font.Cartoon
+    Text = "Auto Clicking : FALSE\nMouse Locked : FALSE",
     Visible = true,
 })
 --Key Bind--
@@ -46,8 +44,13 @@ UIS.InputBegan:Connect(function(inputObj, GPE)
         if (inputObj.KeyCode == getKeycode(Settings["Auto Click Keybind"])) then
             flags.Auto_Clicking = not flags.Auto_Clicking
         end
+        
+        if (inputObj.KeyCode == getKeycode(Settings["Lock Mouse Position Keybind"])) then
+            flags.Mouse_Locked_Position = Vector2.new(Mouse.X, Mouse.Y)
+            flags.Mouse_Locked = not flags.Mouse_Locked
+        end
 
-        Text.Text = ("Auto Clicking :"):format(tostring(flags.Auto_Clicking):upper())
+        Text.Text = ("Auto Clicking : %s\nMouse Locked : %s"):format(tostring(flags.Auto_Clicking):upper(), tostring(flags.Mouse_Locked):upper())
     end
 end)
 --Auto Click--
