@@ -5,6 +5,16 @@ local UIS = game:GetService("UserInputService")
 local VIM = game:GetService("VirtualInputManager")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
+--Vars--
+local LocalPlayer = Players.LocalPlayer
+local Camera = workspace.CurrentCamera
+local flags = {Auto_Clicking = false, Mouse_Locked = false}
+--Mouse-- 
+local Mouse = setmetatable({}, {
+    __index = function(table, index)
+        return UIS:GetMouseLocation()[index]
+    end
+})
 --Get Keybind--
 local getKeycode = function(bind)
     return (pcall(function() return (Enum.KeyCode[bind]) end) and Enum.KeyCode[bind] or bind)
@@ -23,8 +33,8 @@ end
 local Text = Draw("Text", {
     Size = 18,
     Outline = true,
-    OutlineColor = Color3.fromRGB(0, 0, 0),
-    Color = Color3.fromRGB(1, 0, 0),
+    OutlineColor = Color3.fromRGB(255, 255, 255),
+    Color = Color3.fromRGB(0, 0, 0),
     Text = "Auto Clicking : FALSE",
     BorderColor3 = Color3.new(1, 0, 0)
     Font = Enum.Font.Cartoon
