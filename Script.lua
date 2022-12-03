@@ -52,7 +52,7 @@ end)
 coroutine.wrap(function()
     while (true) do
         Text.Visible = Settings.GUI
-        Text.Position = Vector2.new(Camera.ViewportSize.X - 133, Camera.ViewportSize.Y - 20)
+        Text.Position = Vector2.new(Camera.ViewportSize.X - 133, Camera.ViewportSize.Y - 22)
 
         if (flags.Auto_Clicking) then
             for i = 1, 2 do
